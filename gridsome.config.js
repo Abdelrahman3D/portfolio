@@ -1,9 +1,14 @@
 // This is where project configuration and plugin options are located.
 // Learn more: https://gridsome.org/docs/config
-const path = require('path');
 
 module.exports = {
-  siteName: 'Gridsome',
+  siteName: 'Ismail9K',
+  siteUrl: 'https://ismail9k.com',
+  description: 'Abdelrahamn Ismail, personal portfolio webpage.',
+  icon: {
+    favicon: './src/img/favicon.png',
+    touchicon: './src/img/touchicon.png',
+  },
   plugins: [
     {
       use: 'gridsome-plugin-pug',
@@ -14,6 +19,24 @@ module.exports = {
         pugLoader: {
           /* Options for `pug-loader` */
         },
+      },
+    },
+    {
+      use: 'gridsome-plugin-manifest',
+      options: {
+        background_color: '#3fa66f',
+        icon_path: './src/assets/img/icon.png',
+        name: 'Ismail9K.com',
+        short_name: '9k',
+        theme_color: '#3fa66f',
+        lang: 'en',
+      },
+    },
+    {
+      use: 'gridsome-plugin-gtm',
+      options: {
+        id: 'GTM-532G58F',
+        enabled: true,
       },
     },
   ],

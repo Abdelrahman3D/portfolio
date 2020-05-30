@@ -11,6 +11,8 @@
     "intersection-observer": "^0.10.0"
   },
   "devDependencies": {
+    "gridsome-plugin-gtm": "^0.1.1",
+    "gridsome-plugin-manifest": "^0.3.4",
     "gridsome-plugin-pug": "^0.0.3",
     "node-sass": "^4.14.1",
     "pug": "^3.0.0",
