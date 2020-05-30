@@ -168,6 +168,8 @@ import './stylus/_index.styl';
 
 export default {
   name: 'Puppet',
-  mounted: initPuppeteer,
+  mounted() {
+    this.$nextTick(initPuppeteer);
+  },
 };
 </script>

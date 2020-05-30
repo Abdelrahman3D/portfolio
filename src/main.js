@@ -5,7 +5,6 @@ import 'intersection-observer';
 import DefaultLayout from '~/layouts/Default.vue';
 import CleanLayout from '~/layouts/Clean.vue';
 import metaData from '~/assets/data/meta';
-import '~/assets/js/script.js';
 import '~/assets/style/app.styl';
 
 export default function(Vue, { router, head, isClient }) {

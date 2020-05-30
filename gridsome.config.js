@@ -6,8 +6,8 @@ module.exports = {
   siteUrl: 'https://ismail9k.com',
   description: 'Abdelrahamn Ismail, personal portfolio webpage.',
   icon: {
-    favicon: './src/img/favicon.png',
-    touchicon: './src/img/touchicon.png',
+    favicon: './src/assets/img/favicon.png',
+    touchicon: './src/assets/img/touchicon.png',
   },
   plugins: [
     {
@@ -21,17 +21,17 @@ module.exports = {
         },
       },
     },
-    {
-      use: 'gridsome-plugin-manifest',
-      options: {
-        background_color: '#3fa66f',
-        icon_path: './src/assets/img/icon.png',
-        name: 'Ismail9K.com',
-        short_name: '9k',
-        theme_color: '#3fa66f',
-        lang: 'en',
-      },
-    },
+    // {
+    //   use: 'gridsome-plugin-manifest',
+    //   options: {
+    //     background_color: '#3fa66f',
+    //     icon_path: './src/assets/img/icon.png',
+    //     name: 'Ismail9K.com',
+    //     short_name: '9k',
+    //     theme_color: '#3fa66f',
+    //     lang: 'en',
+    //   },
+    // },
     {
       use: 'gridsome-plugin-gtm',
       options: {
