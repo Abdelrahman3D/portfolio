@@ -3,10 +3,12 @@
 import 'intersection-observer';
 
 import DefaultLayout from '~/layouts/Default.vue';
+import CleanLayout from '~/layouts/Clean.vue';
 import '~/assets/js/script.js';
 import '~/assets/style/app.styl';
 
 export default function(Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout);
+  Vue.component('CleanLayout', CleanLayout);
 }
