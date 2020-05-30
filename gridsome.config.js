@@ -12,26 +12,27 @@ module.exports = {
   plugins: [
     {
       use: 'gridsome-plugin-pug',
+    },
+    {
+      use: 'gridsome-plugin-pwa',
       options: {
-        pug: {
-          /* Options for `pug-plain-loader` */
-        },
-        pugLoader: {
-          /* Options for `pug-loader` */
-        },
+        title: 'Ismail9K.com',
+        startUrl: '/',
+        display: 'standalone',
+        statusBarStyle: 'default',
+        manifestPath: 'manifest.json',
+        disableServiceWorker: false,
+        serviceWorkerPath: 'service-worker.js',
+        cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg',
+        shortName: 'Ismail9K',
+        themeColor: '#3fa66f',
+        backgroundColor: '#ffffff',
+        icon: './src/assets/img/icon.jpg',
+        msTileImage: '',
+        msTileColor: '#00aba9',
+        gcmSenderId: undefined,
       },
     },
-    // {
-    //   use: 'gridsome-plugin-manifest',
-    //   options: {
-    //     background_color: '#3fa66f',
-    //     icon_path: './src/assets/img/icon.png',
-    //     name: 'Ismail9K.com',
-    //     short_name: '9k',
-    //     theme_color: '#3fa66f',
-    //     lang: 'en',
-    //   },
-    // },
     {
       use: 'gridsome-plugin-gtm',
       options: {
