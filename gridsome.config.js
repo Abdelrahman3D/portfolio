@@ -14,15 +14,29 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'content/posts/**/*.md',
+        baseDir: './content/posts',
+        path: '**/*.md',
         typeName: 'BlogPost',
+        tags: {
+          typeName: 'Tag',
+          create: true,
+        },
       },
     },
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'content/projects/**/*.md',
+        baseDir: './content/projects',
+        path: '*.md',
         typeName: 'Project',
+      },
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        baseDir: 'content/resources/',
+        path: '*.md',
+        typeName: 'Resource',
       },
     },
     {
