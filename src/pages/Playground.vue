@@ -4,7 +4,7 @@ CleanLayout
 </template>
 
 <script>
-import Puppet from '~/assets/puppet/Puppet.vue';
+import Puppet from '~/components/Puppet.vue';
 
 export default {
   name: 'Playground',

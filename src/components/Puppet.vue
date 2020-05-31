@@ -163,8 +163,8 @@ div
 </template>
 
 <script>
-import initPuppeteer from './js/puppeteer';
-import './stylus/_index.styl';
+import initPuppeteer from '~/assets/puppet/js/puppeteer';
+import '~/assets/puppet/stylus/_index.styl';
 
 export default {
   name: 'Puppet',

@@ -1,4 +1,4 @@
-<template lang="pug" functional>
+<template lang="pug">
 header
   nav.navbar
     a.navbar-brand
