@@ -63,7 +63,7 @@ Layout
       .card.animation(data-animation="slide-up" v-for="project in projects")
         h3.card-title
           a.link(:href="project.link" target="_blank" rel="noopener") {{ project.title }}
-        h4.card-subtitle {{ project.subtitle }}
+        h4.card-subtitle {{ project.type }}
         p.card-description {{ project.description }}
 
   section#writings.section
@@ -96,13 +96,14 @@ Layout
 <script>
 import Figure from '~/components/Figure.vue';
 
-import projects from '~/assets/data/projects';
 export default {
   components: { Figure },
-  data: () => ({ projects }),
   computed: {
     posts() {
       return this.$static.allBlogPost.edges.map(({ node }) => node) || [];
+    },
+    projects() {
+      return this.$static.allProject.edges.map(({ node }) => node) || [];
     },
   },
   mounted() {
@@ -184,6 +185,17 @@ query {
       node {
         title
         excerpt
+        link
+      }
+    }
+  }
+
+  allProject(limit:5) {
+    edges {
+      node {
+        title
+        type
+        description
         link
       }
     }
