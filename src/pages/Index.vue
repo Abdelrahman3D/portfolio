@@ -75,10 +75,10 @@ Layout
         500+ followers with 35k+ total views, and four badges.#[br]
         I write generally about front-end development techniques and tips.
     .section-elements
-      .card.animation(data-animation="slide-up" v-for="post in writings")
+      .card.animation(data-animation="slide-up" v-for="post in posts")
         h3.card-title
           a.link(:href="post.link" target="_blank" rel="noopener") {{ post.title }}
-        p.card-description {{ post.description }}
+        p.card-description {{ post.excerpt }}
         a.card-button(:href="post.link" target="_blank" rel="noopener") read more
 
   section#contact.section.is-center
@@ -97,10 +97,14 @@ Layout
 import Figure from '~/components/Figure.vue';
 
 import projects from '~/assets/data/projects';
-import writings from '~/assets/data/writings';
 export default {
   components: { Figure },
-  data: () => ({ projects, writings }),
+  data: () => ({ projects }),
+  computed: {
+    posts() {
+      return this.$static.allBlogPost.edges.map(({ node }) => node) || [];
+    },
+  },
   mounted() {
     this.$nextTick(() => {
       this.initObserver();
@@ -172,6 +176,20 @@ export default {
   },
 };
 </script>
+
+<static-query>
+query {
+  allBlogPost(limit:5) {
+    edges {
+      node {
+        title
+        excerpt
+        link
+      }
+    }
+  }
+}
+</static-query>
 
 <style>
 .home-links a {

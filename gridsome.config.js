@@ -4,14 +4,19 @@
 module.exports = {
   siteName: 'Ismail9K',
   siteUrl: 'https://ismail9k.com',
-  description: 'Abdelrahamn Ismail, personal portfolio webpage.',
+  siteDescription: 'Ismail9K, personal blog.',
   icon: {
     favicon: './src/assets/img/favicon.png',
     touchicon: './src/assets/img/touchicon.png',
   },
   plugins: [
+    { use: 'gridsome-plugin-pug' },
     {
-      use: 'gridsome-plugin-pug',
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'content/posts/**/*.md',
+        typeName: 'BlogPost',
+      },
     },
     {
       use: 'gridsome-plugin-pwa',
@@ -41,6 +46,12 @@ module.exports = {
       },
     },
   ],
+  templates: {},
+  transformers: {
+    remark: {
+      plugins: [],
+    },
+  },
   css: {
     loaderOptions: {
       stylus: {
