@@ -9,5 +9,8 @@ import Puppet from '~/assets/puppet/Puppet.vue';
 export default {
   name: 'Playground',
   components: { Puppet },
+  metaInfo: {
+    title: 'Playground',
+  },
 };
 </script>
