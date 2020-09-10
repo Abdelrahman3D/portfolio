@@ -1,6 +1,7 @@
 ---
+sort: 1
 name: Kite.agency
-url: https:/kite.agency
+url: https://kite.agency
 title: Front-End Developer
 location: Cairo, Egypt
 start: Jul 2015

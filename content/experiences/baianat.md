@@ -1,6 +1,7 @@
 ---
+sort: 2
 name: Baianat
-url: https://knawat.com
+url: https://baianat.com
 title: Front-End Developer
 location: New Damietta, Egypt
 start: Feb 2017
