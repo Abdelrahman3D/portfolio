@@ -1,18 +1,19 @@
 <template lang="pug">
 footer.footer
   ul.footer-list
-    li(v-for="social in Object.keys(socials)")
-      a.footer-item(:href="socials[social]" target="_blank" rel="noopener")
-        AppIcon(:name="social")
+    li(v-for="social in socials")
+      a.footer-item(:href="social.link" target="_blank" rel="noopener")
+        AppIcon(:name="social.name")
 </template>
 
 <script>
 import AppIcon from '~/components/AppIcon';
+
 export default {
   components: { AppIcon },
   computed: {
     socials() {
-      return this.$static.resource;
+      return this.$static.allSocial.edges.map(({ node }) => node) || [];
     },
   },
 };
@@ -20,13 +21,13 @@ export default {
 
 <static-query>
 query {
-  resource(path:"/socials") {
-    twitter
-    github
-    medium
-    linkedin
-    dev
-    mail
+  allSocial(limit: 10) {
+    edges {
+      node {
+        name
+        link
+      }
+    }
   }
 }
 </static-query>
