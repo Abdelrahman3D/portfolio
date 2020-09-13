@@ -3,11 +3,21 @@ CleanLayout
   .resume
     .resume-header
       h2.resume-name {{ info.name }}
-      p.resume-header-info {{ info.address }}
-      p.resume-header-info {{ info.email }}
-      p.resume-header-info {{ info.github }}
-      p.resume-header-info {{ info.portfolio }}
-      p.resume-header-info {{ info.mobile }}
+      a.resume-header-info(:href="`mailto:${info.email}?Subject=Hello`" target="_blank")
+        AppIcon(name="mail")
+        | {{ info.email }}
+      a.resume-header-info(:href="info.github" target="_blank")
+        AppIcon(name="github")
+        | {{ info.github }}
+      a.resume-header-info(:href="info.portfolio" target="_blank")
+        AppIcon(name="home")
+        | {{ info.portfolio }}
+      a.resume-header-info(:href="`tel:${info.portfolio}`" target="_blank")
+        AppIcon(name="phone")
+        | {{ info.mobile }}
+      a.resume-header-info
+        AppIcon(name="landMark")
+        | {{ info.address }}
 
     .resume-section
       h3.resume-title Experiences
@@ -17,11 +27,12 @@ CleanLayout
           h4 {{ exp.title }}
           |  - 
           small {{ exp.name }}
-        span.resume-experience-subtitle {{ exp.start }} - {{ exp.end }}
-        span.resume-experience-subtitle {{ exp.location }}
-
+          span.resume-experience-subtitle {{ exp.location }}
+          span.resume-experience-date {{ exp.start }} - {{ exp.end }}
+        
         .resume-section-content
-          p(v-html="exp.content")
+          div.resume-experience-content(v-html="exp.content")
+          h5 Leveraged knowledge:
           p {{ exp.knowledge }}
 
     .resume-section
@@ -54,9 +65,11 @@ CleanLayout
 import education from '~/assets/data/resources/education.json';
 import skills from '~/assets/data/resources/skills.json';
 import info from '~/assets/data/resources/info.json';
+import AppIcon from '~/components/AppIcon';
 
 export default {
   name: 'Resume',
+  components: { AppIcon },
   data: () => ({
     education,
     skills,
@@ -91,64 +104,5 @@ query {
 
 <style lang="stylus">
 @import '../stylus/utils/_index.styl'
-
-.resume
-  max-width: 100ch
-  margin: 60px auto
-  border: 1px solid $dark
-  background-color: $white
-  color: $dark
-  line-height: 1.5em
-
-.resume-header
-  padding: 20px 60px
-  border-bottom: 1px solid $slategray
-
-.resume-section
-  padding: 20px 60px
-  &:not(:last-child)
-    border-bottom: 1px solid $slategray
-
-.resume-title
-  font-size: 20px
-  margin-top: 0.5em
-  margin-bottom: 0.5em
-
-.resume-section-content
-  font-size: 16px
-  margin-left: 20px
-  text-align: justify
-  ul
-    padding-left: 15px
-
-.resume-experience
-  &:not(:last-child)
-    border-bottom: 1px solid $slategray
-
-.resume-experience-title
-  display: block
-  font-weight: bold
-  color: $dark
-  text-decoration: none
-  margin-top: 1em
-  margin-bottom: 0.5em
-  h4
-    display: inline-block
-    margin: 0
-  small
-    font-weight: normal
-
-.resume-experience-subtitle
-  display: block
-  font-size: 12px
-  color: lighten($dark, 20%)
-
-.resume-education
-  display: grid
-  grid-column-gap: 10px
-  grid-template-columns: 140px 1fr
-
-.resume-education-data
-  font-weight: bold
-  margin: 0
+@import '../stylus/resume'
 </style>
