@@ -26,6 +26,14 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
+        baseDir: './content/experiences',
+        path: '**/*.md',
+        typeName: 'Experience',
+      },
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
         baseDir: './content/projects',
         path: '*.md',
         typeName: 'Project',
@@ -34,9 +42,9 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        baseDir: 'content/resources/',
+        baseDir: './content/socials',
         path: '*.md',
-        typeName: 'Resource',
+        typeName: 'Social',
       },
     },
     {

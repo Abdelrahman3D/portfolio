@@ -30,7 +30,7 @@ export default {
       return icons[props.name];
     },
     getStyleClasses(props) {
-      return [props.size, props.color].map((val) => val && `is-${val}`);
+      return [props.size, props.color].map(val => val && `is-${val}`);
     },
   },
 };

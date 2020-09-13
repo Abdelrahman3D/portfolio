@@ -1,0 +1,28 @@
+{
+  "expert": [
+    "HTML via Pugjs",
+    "CSS via Stylus / Sass",
+    "JavaScript / ES6+",
+    "Vuejs / React / Angular",
+    "Version control (Git)",
+    "Webpack / Rollup",
+    "Tailwind CSS",
+    "Nuxt.js",
+    "Bulma/Bootstrap",
+    "Meteor.js",
+    "Node.js / Express",
+    "MongoDB",
+    "GraphQL",
+    "Service Workers"
+  ],
+  "moderate": ["Wordpress", "Cordova", "Laravel"],
+  "other": [
+    "Performance",
+    "SVG Animation",
+    "Design Patterns",
+    "Accessibility / A11y",
+    "BEM Methodologies",
+    "WCAG",
+    "Git flow Methodologies"
+  ]
+}
