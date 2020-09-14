@@ -3,15 +3,15 @@ CleanLayout
   .resume
     .resume-header
       h2.resume-name {{ info.name }}
-      a.resume-header-info(:href="`mailto:${info.email}?Subject=Hello`" target="_blank")
-        AppIcon(name="mail")
-        | {{ info.email }}
-      a.resume-header-info(:href="info.github" target="_blank")
-        AppIcon(name="github")
-        | {{ info.github }}
       a.resume-header-info(:href="info.portfolio" target="_blank")
         AppIcon(name="home")
         | {{ info.portfolio }}
+      a.resume-header-info(:href="info.github" target="_blank")
+        AppIcon(name="github")
+        | {{ info.github }}
+      a.resume-header-info(:href="`mailto:${info.email}?Subject=Hello`" target="_blank")
+        AppIcon(name="mail")
+        | {{ info.email }}
       a.resume-header-info(:href="`tel:${info.portfolio}`" target="_blank")
         AppIcon(name="phone")
         | {{ info.mobile }}
@@ -19,6 +19,10 @@ CleanLayout
         AppIcon(name="landMark")
         | {{ info.address }}
 
+    .resume-section
+      h3.resume-title Summary
+      .resume-section-content
+        p {{ summary.summary }}
     .resume-section
       h3.resume-title Experiences
 
@@ -63,6 +67,7 @@ CleanLayout
 
 <script>
 import education from '~/assets/data/resources/education.json';
+import summary from '~/assets/data/resources/summary.json';
 import skills from '~/assets/data/resources/skills.json';
 import info from '~/assets/data/resources/info.json';
 import AppIcon from '~/components/AppIcon';
@@ -72,6 +77,7 @@ export default {
   components: { AppIcon },
   data: () => ({
     education,
+    summary,
     skills,
     info,
   }),
@@ -79,6 +85,9 @@ export default {
     experiences() {
       return this.$static.allExperience.edges.map(({ node }) => node) || [];
     },
+  },
+  metaInfo: {
+    title: 'Resume',
   },
 };
 </script>

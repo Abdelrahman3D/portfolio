@@ -1,4 +1,11 @@
 @font-face
+  font-weight: 300
+  font-style: lighter
+  font-family: 'Roboto'
+  src: local('Roboto Light'), url('../fonts/Roboto-Light.ttf') format('truetype')
+  font-display: swap
+
+@font-face
   font-weight: 500
   font-style: normal
   font-family: 'Roboto'
@@ -7,7 +14,7 @@
 
 @font-face
   font-weight: 700
-  font-style: normal
+  font-style: bold
   font-family: 'Roboto'
   src: local('Roboto Bold'), url('../fonts/Roboto-Bold.ttf') format('truetype')
   font-display: swap
@@ -28,6 +35,8 @@
   flex-wrap: wrap
   padding: 20px 40px
   border-bottom: 1px solid $slategray
+  +mobile()
+    padding: 20px
 
 .resume-name
   width: 100%
@@ -39,6 +48,8 @@
   margin: 5px 0
   text-decoration: none
   color: $dark
+  +mobile()
+    width: 100%
   .icon
     margin-right: 10px
     color: $dark
@@ -48,6 +59,8 @@
 
 .resume-section
   margin: 20px 40px
+  +mobile()
+    margin: 20px
 
 .resume-title
   font-size: 20px
@@ -58,13 +71,14 @@
 
 .resume-section-content
   font-size: 14px
-  margin-left: 20px
+  padding: 5px 5px 5px 10px
   text-align: justify
   ul
     padding-left: 15px
-    margin: 5px 0
+    margin: 0
   h5
-    margin: 0 0 0.5em
+    margin: 0
+    font-weight: light
   p
     margin: 0
 
@@ -94,16 +108,11 @@
 
 .resume-experience-subtitle
   float: right
-
-.resume-education
-  display: grid
-  grid-column-gap: 10px
-  grid-template-columns: 140px 1fr
+  +mobile()
+    float: none
 
 .resume-education-data
   font-weight: bold
-  margin: 0
-
 
 @media print
   .main
