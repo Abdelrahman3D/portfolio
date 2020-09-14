@@ -6,7 +6,7 @@ title: Front-End Developer
 location: New Damietta, Egypt
 start: Feb 2017
 end: Jan 2019
-knowledge: Stylus, Pugjs, Vue, JavaScript ES6+, SSR, Nuxt.js, PWA, Webpack, Rollup, BEM, SVG animation, Canvas API, and npm.
+knowledge: Stylus, Pugjs, Vue, Angular, JavaScript ES6+, SSR, Nuxt.js, PWA, Webpack, Rollup, BEM, SVG animation, Canvas API, and npm.
 ---
 
 - Developed a complex tool to interactively create content-rich articles.

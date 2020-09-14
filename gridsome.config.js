@@ -2,9 +2,9 @@
 // Learn more: https://gridsome.org/docs/config
 
 module.exports = {
-  siteName: 'Ismail9K',
+  siteName: 'Ismail9k',
   siteUrl: 'https://ismail9k.com',
-  siteDescription: 'Ismail9K, personal blog.',
+  siteDescription: 'Ismail9k, personal blog.',
   icon: {
     favicon: './src/assets/img/favicon.png',
     touchicon: './src/assets/img/touchicon.png',
@@ -50,7 +50,7 @@ module.exports = {
     {
       use: 'gridsome-plugin-pwa',
       options: {
-        title: 'Ismail9K.com',
+        title: 'Ismail9k.com',
         startUrl: '/',
         display: 'standalone',
         statusBarStyle: 'default',
@@ -58,7 +58,7 @@ module.exports = {
         disableServiceWorker: false,
         serviceWorkerPath: 'service-worker.js',
         cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg',
-        shortName: 'Ismail9K',
+        shortName: 'Ismail9k',
         themeColor: '#3fa66f',
         backgroundColor: '#ffffff',
         icon: './src/assets/img/icon.jpg',

@@ -4,10 +4,8 @@ include ../fx-mixin.pug
 Layout
   section.intro
     .intro-info
-      h1.intro-title.animation(data-animation="slide-up")
-        |I'm Abdelrahman Ismail, a web developer, writer, and pro gamer.
-      h2.intro-subtitle.animation(data-animation="slide-up")
-        |I’m obsessed with performance, new techniques, and web animations.
+      h2.intro-title.animation(data-animation="slide-up")
+        |I'm Abdelrahman Ismail, a full-stack web developer, writer, and pro gamer.
     .intro-figure.animation(data-animation="bounce")
       Figure
 
@@ -16,13 +14,14 @@ Layout
     .section-info.animation(data-animation="slide-up"):  .section-sticky
       h2.section-title.fx
         +fx('Wor-', 'king')
-      p.section-description.
-        Through the past four years, I've worked on a wide variety of projects, providing front-end development. I'm also an open-source maintainer. 
     .section-elements
       .card.animation(data-animation="slide-up")
-        h3.card-title I worked on
-        p.card-description.
-          Design systems and many open-source tools that aim to introduce new better solutions for both the end-users and developers. I’m obsessed with performance and design patterns. I also love to add life to any project using SVG web animation.
+        h3.card-title Summary
+        p.card-description
+          | {{ summary.summary }}
+        h3.card-title Skills
+        p.card-description
+          | {{ skills.expert.join(', ') }}
         a.resume-button.link(href="/resume" target="_blank" rel="noopener").
           Complete Résumé
 
@@ -69,9 +68,15 @@ Layout
 
 <script>
 import Figure from '~/components/Figure.vue';
+import summary from '~/assets/data/resources/summary.json';
+import skills from '~/assets/data/resources/skills.json';
 
 export default {
   components: { Figure },
+  data: () => ({
+    summary,
+    skills,
+  }),
   computed: {
     posts() {
       return this.$static.allBlogPost.edges.map(({ node }) => node) || [];

@@ -1,8 +1,8 @@
 <template lang="pug">
 header
   nav.navbar
-    a.navbar-brand
-      span.brand-letter Ismail9k
+    a.navbar-brand(href="https://ismail9k.com")
+      h1.brand-letter Ismail9k
       span.brand-dash _
     .navbar-end
       ul.navbar-menu
