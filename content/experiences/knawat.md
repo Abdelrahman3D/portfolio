@@ -6,7 +6,7 @@ title: Full-Stack Developer
 location: Istanbul, Turkey
 start: Feb 2019
 end: Present
-knowledge: Vue, Angular, React, Meteorjs, Cordova, MongoDB, Elasticsearch, GraphQL, Node.js, Express, Moleculerjs Microservices, Kubernetes, Redis, Jest, Tailwind, git-flow, Google Tag Manager, and JIRA.
+knowledge: Vue, React, Meteorjs, Cordova, MongoDB, Elasticsearch, GraphQL, Node.js, Express, Moleculerjs Microservices, Kubernetes, Docker, Redis, Jest, Tailwind, git-flow, Google Tag Manager, and JIRA.
 ---
 
 - Working mainly on a microservices dropshipping platform, which handles millions of requests, from thousands of e-commerce stores.

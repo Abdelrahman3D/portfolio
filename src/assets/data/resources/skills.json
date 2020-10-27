@@ -7,7 +7,6 @@
     "TypeScript",
     "Vuejs",
     "React",
-    "Angular",
     "Version control (Git)",
     "Webpack",
     "Rollup",
@@ -17,12 +16,14 @@
     "Bulma/Bootstrap",
     "Meteor.js",
     "Node.js",
+    "Moleculerjs",
+    "Micro Services",
     "Express",
     "MongoDB",
     "GraphQL",
     "Service Workers"
   ],
-  "moderate": ["Wordpress", "Cordova", "Laravel"],
+  "moderate": [],
   "other": [
     "Performance",
     "SVG Animation",

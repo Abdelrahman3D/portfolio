@@ -40,6 +40,15 @@ CleanLayout
           p {{ exp.knowledge }}
 
     .resume-section
+      h3.resume-title Passion Projects
+      .resume-section-content
+        .resume-project(v-for="project in projects")
+          a.resume-project-title(:href="project.link" target="_blank")
+            h4 {{ project.title }}
+            span  - 
+            span.resume-project-type {{ project.type }}
+          p.resume-project-description {{ project.description }}
+    .resume-section
       h3.resume-title Education
       .resume-section-content
         dl.resume-education
@@ -85,6 +94,9 @@ export default {
     experiences() {
       return this.$static.allExperience.edges.map(({ node }) => node) || [];
     },
+    projects() {
+      return this.$static.allProject.edges.map(({ node }) => node) || [];
+    },
   },
   metaInfo: {
     title: 'Resume',
@@ -108,10 +120,21 @@ query {
       }
     }
   }
+
+  allProject(limit:3) {
+    edges {
+      node {
+        title
+        type
+        description
+        link
+      }
+    }
+  }
 }
 </static-query>
 
 <style lang="stylus">
-@import '../stylus/utils/_index.styl'
-@import '../stylus/resume'
+@import '../assets/style/utils/_index.styl'
+@import '../assets/style/resume'
 </style>
