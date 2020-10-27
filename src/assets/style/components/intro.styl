@@ -30,7 +30,14 @@
   +tablet()
     font-size: $font-large
   +dark()
-    text-shadow: 1px 1px 0 lighten($black, 10%), 2px 2px 0 lighten($black, 10%)
+    color: $white
+    &::after
+      display: block
+      margin-top: 10px
+      width: 100px
+      height: 8px
+      background: $primary
+      content: ''
 
 .intro-subtitle
   font-weight: normal
